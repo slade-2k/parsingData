@@ -1,5 +1,6 @@
 package de.iks.hotischeck.parsingData;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.filechooser.FileSystemView;
 
 public class Main {
 
@@ -22,8 +25,8 @@ public class Main {
 	
 	public List<String> readBigTextFile() throws IOException {
 		List<String> lines = new ArrayList<>();
-		
-		Path path = Paths.get("C:/Users/iho/Desktop/test.txt");
+	
+		Path path = Paths.get("test.txt");
 		try (Scanner scanner = new Scanner(path, StandardCharsets.UTF_8.name())) {
 			while(scanner.hasNextLine()) {
 				lines.add(scanner.nextLine());
